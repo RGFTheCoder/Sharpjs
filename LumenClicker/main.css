@@ -1,0 +1,64 @@
+* {
+    margin: 0%;
+}
+
+html,
+body {
+    font-family: 'Helvetica Neue Light', 'Segoe UI Light', sans-serif;
+}
+
+div {
+    background: #262626;
+    color: #e5e5e5;
+    display: inline-block;
+    overflow: auto;
+}
+
+d * {
+    margin: 5px;
+}
+
+.left {
+    width: 20%;
+}
+
+.left>* {
+    margin: 4pt;
+}
+
+.main {
+    width: 80%;
+    position: absolute;
+    /*or fixed*/
+    right: 0px;
+    top: 0px;
+}
+
+.main>* {
+    margin: 4pt;
+}
+
+.button {
+    display: block;
+    background: #393939;
+    width: 9pc;
+    height: 9pc;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.button:hover {
+    background: #4c4c4c;
+}
+
+.button:active {
+    background: #131313;
+}
+
+.button>.dec {
+    position: relative;
+    top: 2.25pc;
+    left: 0pc;
+    height: 4.5pc;
+    width: 4.5pc;
+}
