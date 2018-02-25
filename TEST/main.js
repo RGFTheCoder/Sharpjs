@@ -1,7 +1,7 @@
 var toto = 1;
 
 function t() {
-    toto++;
+  toto++;
 }
 
 setInterval(t, 10);
