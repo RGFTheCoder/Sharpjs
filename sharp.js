@@ -35,4 +35,4 @@ window.onload = function() {
     setInterval(Sharp.run, 10);
 }
 
-//Hola es toto
+// hola soy papa
