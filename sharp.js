@@ -47,10 +47,6 @@ function addLoadEvent(func) {
       func();
     }
   }
-}
-addLoadEvent(nameOfSomeFunctionToRunOnPageLoad);
-addLoadEvent(function() {
-  /* more code to run on page load */
-});
+};
 
 addLoadEvent(loadSharp);
