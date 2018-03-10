@@ -53,7 +53,23 @@ var Sharp = {
     })
 }
 
-window.onload = function() {
+loadSharp = function() {
     Sharp.start();
     setInterval(Sharp.run, 10);
 }
+
+function addLoadEvent(func) {
+    var oldonload = window.onload;
+    if (typeof window.onload != 'function') {
+        window.onload = func;
+    } else {
+        window.onload = function() {
+            if (oldonload) {
+                oldonload();
+            }
+            func();
+        }
+    }
+};
+
+addLoadEvent(loadSharp);
