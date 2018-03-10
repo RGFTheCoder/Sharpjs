@@ -1,3 +1,5 @@
+var md;
+
 var Sharp = {
     start: (function() {
         document.querySelectorAll(".e").forEach(element => {
@@ -15,6 +17,17 @@ var Sharp = {
 
             element.innerHTML = a.join(" ");
         });
+        if (typeof Remarkable !== 'undefined') {
+            md = new Remarkable();
+            document.querySelectorAll(".m").forEach(element => {
+                var a = element.innerHTML;
+                var ret;
+                ret = md.render(a);;
+                a = "<span data-toto=\"" + a + "\" class=\"mv\">" + ret + "</span>";
+
+                element.innerHTML = a;
+            });
+        }
     }),
     stop: (function() {
         this.rep.stop
@@ -27,6 +40,16 @@ var Sharp = {
 
             element.innerHTML = ret;
         });
+
+        if (typeof Remarkable !== 'undefined') {
+            document.querySelectorAll(".mv").forEach(element => {
+                var ret;
+                ret = md.render(element.getAttribute("data-toto"));
+
+
+                element.innerHTML = ret;
+            });
+        }
     })
 }
 
@@ -34,5 +57,3 @@ window.onload = function() {
     Sharp.start();
     setInterval(Sharp.run, 10);
 }
-
-// hola soy papa
